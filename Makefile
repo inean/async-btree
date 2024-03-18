@@ -37,7 +37,7 @@ install: .install .cache ## Install project dependencies
 
 poetry.lock: pyproject.toml
 	$(MAKE) configure
-	poetry lock
+	poetry lock --no-update
 	@touch $@
 
 .cache:

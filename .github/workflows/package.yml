@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8, 3.11]
+        python-version: [3.8, 3.11, 3.12]
 
     steps:
     - uses: actions/checkout@v4
@@ -27,10 +27,9 @@ jobs:
     - name: Install and configure Poetry
       uses: snok/install-poetry@v1
     - name: Install dependencies
-      run: make install 
+      run: make install
     - name: Check Python package
       run: make check
     - name: Test Python package
       run: make test
 
-      
